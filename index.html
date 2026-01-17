@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coni — 100x Your Productivity</title>
+    <meta name="description"
+        content="Coni is an AI assistant that 100x your productivity with verifiable quality. Permissioned execution, observable runs, and high-quality outputs as real files.">
+    <link rel="icon" type="image/png" sizes="16x16" href="web-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="web-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="web-64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-512.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': {
+                            DEFAULT: '#FBBF24',
+                            50: '#FFFBEB',
+                            100: '#FEF3C7',
+                            200: '#FDE68A',
+                            300: '#FCD34D',
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        },
+                        'accent': {
+                            DEFAULT: '#D97706',
+                            hover: '#B45309',
+                            soft: 'rgba(217,119,6,0.16)',
+                        },
+                        'surface': {
+                            primary: '#0f172a',
+                            secondary: '#1e293b',
+                            tertiary: '#334155',
+                            elevated: '#1e293b',
+                        },
+                        'content': {
+                            primary: '#f1f5f9',
+                            secondary: '#cbd5e1',
+                            muted: '#94a3b8',
+                        },
+                        'border': {
+                            DEFAULT: '#334155',
+                            strong: '#475569',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body class="bg-surface-primary text-content-primary">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-surface-primary/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <img src="web-64.png" alt="Coni" class="w-8 h-8">
+                    <span class="text-2xl font-bold gradient-text">Coni</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features"
+                        class="text-content-secondary hover:text-content-primary transition">Features</a>
+                    <a href="#how-it-works" class="text-content-secondary hover:text-content-primary transition">How It
+                        Works</a>
+                    <a href="https://github.com/shiyanhui/release"
+                        class="text-content-secondary hover:text-content-primary transition">GitHub</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/shiyanhui/release"
+                        class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg border border-border hover:border-border-strong transition">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="#download"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg border border-border hover:border-border-strong transition">
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                100x Your Productivity
+            </h1>
+            <p class="text-2xl md:text-4xl font-semibold text-content-muted max-w-3xl mx-auto mb-6">
+                AI-powered. Verifiable quality.
+            </p>
+            <p class="text-base md:text-lg text-content-muted max-w-2xl mx-auto mb-10 leading-relaxed opacity-80">
+                Permissioned execution and observable runs. Bring your own model. Ship real deliverables as files.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 mb-12">
+                <a href="https://github.com/shiyanhui/release/releases/latest"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent hover:bg-accent-hover transition text-surface-primary">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download for Mac
+                </a>
+                <a href="https://github.com/shiyanhui/release"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl border border-border hover:border-border-strong transition">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Star on GitHub
+                </a>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <img src="screenshot.png" alt="Coni App Screenshot" class="w-full rounded-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Showcase -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Stop Chatting, Start Shipping</h2>
+            <p class="text-content-muted text-center mb-12 max-w-2xl mx-auto">From deep research to production-ready
+                files. Fast delivery with quality you can verify.</p>
+            <div class="max-w-5xl mx-auto">
+                <img src="demo-report.png" alt="Coni Research Report Demo" class="w-full rounded-xl">
+            </div>
+            <div class="max-w-5xl mx-auto mt-12">
+                <img src="demo-coding.png" alt="Coni Coding Demo" class="w-full rounded-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes It Different -->
+    <section id="features" class="py-20 px-4 bg-surface-secondary/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What makes it different</h2>
+            <p class="text-content-muted text-center mb-16 max-w-2xl mx-auto">Not just another AI chat. Coni delivers
+                real output from your real files.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-surface-tertiary/50 rounded-xl p-6 border border-border hover:border-brand/50 transition">
+                    <div class="w-12 h-12 bg-accent-soft rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Runs Locally</h3>
+                    <p class="text-content-muted text-sm">Your files stay on your machine. You control which folders it
+                        can access. Nothing leaves your machine unless you configure a remote model provider.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-surface-tertiary/50 rounded-xl p-6 border border-border hover:border-brand/50 transition">
+                    <div class="w-12 h-12 bg-accent-soft rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Bring Your Own AI</h3>
+                    <p class="text-content-muted text-sm">Use OpenAI, Anthropic, Gemini, and more. Your API key, your
+                        choice. No vendor lock-in.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-surface-tertiary/50 rounded-xl p-6 border border-border hover:border-green-500/50 transition">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">100% Open Source</h3>
+                    <p class="text-content-muted text-sm">Every line on GitHub. MIT licensed. Fork it, change it, make
+                        it yours.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-surface-tertiary/50 rounded-xl p-6 border border-border hover:border-brand/50 transition">
+                    <div class="w-12 h-12 bg-brand/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Verifiable Quality</h3>
+                    <p class="text-content-muted text-sm">Permissioned execution and observable runs help you review what
+                        happened and verify the quality of the output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What It Does -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What it delivers</h2>
+            <p class="text-content-muted text-center mb-16 max-w-2xl mx-auto">Real output as files—structured,
+                reviewable, and ready to use.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-soft rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Report Generation</h3>
+                    <p class="text-content-muted text-sm">Turn folders of meeting notes, docs, or code into structured
+                        reports</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-soft rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Code Analysis</h3>
+                    <p class="text-content-muted text-sm">Analyze codebases, generate documentation, and draft change
+                        summaries</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">File Organization</h3>
+                    <p class="text-content-muted text-sm">Sort, rename, and organize files based on content or custom
+                        rules</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Browser Automation</h3>
+                    <p class="text-content-muted text-sm">Control browsers to gather data, fill forms, or automate web
+                        tasks</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Custom Workflows</h3>
+                    <p class="text-content-muted text-sm">Define repeatable tasks and reuse workflows for future runs
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">CLI & TUI Native</h3>
+                    <p class="text-content-muted text-sm">Terminal-first. Use the interactive TUI for guided sessions,
+                        or the CLI for automation and scripting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 px-4 bg-surface-secondary/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">How to use it</h2>
+            <p class="text-content-muted text-center mb-16">Takes 2 minutes to set up.</p>
+
+            <div class="space-y-8">
+                <div class="flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                        1</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Install Coni</h3>
+                        <p class="text-content-muted">Download the app for macOS, or install the CLI toolchain on Linux
+                            or Windows.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                        2</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Connect Your AI</h3>
+                        <p class="text-content-muted">Use your own API key (OpenAI, Anthropic, and more). No
+                            subscriptions required.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6">
+                    <div
+                        class="w-12 h-12 bg-brand rounded-xl flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                        3</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Get Your Deliverable</h3>
+                        <p class="text-content-muted">Ask for a report, summary, or any structured output. Coni
+                            delivers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="download" class="py-20 px-4 bg-gradient-to-br from-brand/20 to-brand/20">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to ship real work?</h2>
+            <p class="text-xl text-content-muted mb-8">Open source. Built on trust. Built for real deliverables.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://github.com/shiyanhui/release/releases/latest"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent hover:bg-accent-hover transition">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download for Mac
+                </a>
+                <a href="https://github.com/shiyanhui/release"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl border border-border hover:border-border-strong transition">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-border">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-bold gradient-text">Coni</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/shiyanhui/release"
+                        class="text-content-muted hover:text-content-primary transition">GitHub</a>
+                    <a href="https://github.com/shiyanhui/release#readme"
+                        class="text-content-muted hover:text-content-primary transition">Docs</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-content-muted text-sm">
+                <p>© 2026 Coni. Open source under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
